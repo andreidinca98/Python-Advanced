@@ -1,0 +1,40 @@
+<!-- Adaugarea unei notite, folosit bootstrap-->
+{% extends 'notiteApp/home.html' %}
+
+{% block content %}
+
+<h1 class="mt-5 mb-5 text-center">Add a new note</h1>
+
+<form class="mx-auto mt-5" method="POST" action="{% url 'notiteApp:add' %}" id="note-form">
+    {% csrf_token %}
+
+    <!--inputul pentru titlul notitei-->
+    <div class="form-group mt-3">    
+        <label for="note-title">Title:</label>
+        <input class="form-control" type="text" placeholder="Title of note..." id="note-title" name="note-title">
+    </div>
+
+    <!--inputul pentru continul notitei-->
+    <div class="form-group mt-3">
+        <label for="note-content">Content:</label>
+        <textarea class="form-control" name="note-content" id="note-content" form="note-form" placeholder="Enter text here..."></textarea>
+    </div>
+    <div class="form-group mt-3">
+
+        <!--nivelurile de importanta ale notitei-->
+        <label for="note-importance">How important is this note:</label>
+        <select class="form-control" name="note-importance" id="note-importance">
+            <option value="">--Please choose the importance--</option>
+            <option value="1">High</option>
+            <option value="2">Medium</option>
+            <option value="3">Low</option>
+        </select>
+    </div>
+
+    <!--button pentru adaugarea notitei-->
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success mx-auto">Add note</button>
+    </div>
+</form>
+
+{% endblock %}

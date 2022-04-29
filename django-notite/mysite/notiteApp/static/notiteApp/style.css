@@ -1,0 +1,30 @@
+.card {
+    width: 30vw;
+}
+
+#note-form {
+    width: 40vw;
+}
+
+#delete-form {
+    width: 30px;
+}
+
+
+/* buton delete */
+button {
+    display: block !important; 
+}
+
+.btn-circle.btn-sm {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card-footer {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
+}
